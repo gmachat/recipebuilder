@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block maincontent %}
+<h1>Recipe Form</h1>
+<div>
+  <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" value="Save">Submit</button>
+  </form>
+</div>
+
+{% endblock %}

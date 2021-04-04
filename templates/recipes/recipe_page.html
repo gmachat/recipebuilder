@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block maincontent %}
+<h1>{{ recipe.name }}</h1>
+<h3>Created by: {{ created_by }}</h3>
+<div>Prep Time: {{ recipe.prep_time }}</div>
+<div>Cook Time: {{ recipe.cook_time }}</div>
+<div>Ingredients: </div>
+<div>
+  {% for ingredient in ingredients %}
+  {{ingredient.description}}
+  {% endfor %}
+</div>
+<div>{{nutrients}} </div>
+<!-- {{res}} -->
+{% endblock %}

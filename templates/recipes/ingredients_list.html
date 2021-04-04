@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+
+<h1>All Ingredient List</h1>
+{% for d in data %}
+  <div>{{ d.description }}</div>
+  {% for nutrient in d.foodNutrients %}
+    <div>{{ nutrient.name }} : {{nutrient.amount}} ({{nutrient.unitName}})</div>
+  {% endfor %}
+  <hr />
+{% endfor %}
+
+{% endblock %}

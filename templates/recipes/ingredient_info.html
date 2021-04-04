@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+<h1>{{ data.description }}</h1>
+  {% for nutrient in data.foodNutrients %}
+    <div>{{ nutrient.nutrient.name }} : {{nutrient.amount}} ({{nutrient.nutrient.unitName}})</div>
+  {% endfor %}
+  <hr />
+{% endblock %}

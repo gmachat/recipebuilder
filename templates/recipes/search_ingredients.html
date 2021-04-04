@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block maincontent %}
+
+<h1>Search Ingredients</h1>
+<div>Results for "{{search}}": {{data.totalHits}} </div>
+<br >
+{% for food in data.foods%}
+<div>{{food.brandOwner}} | {{food.description}}</div>
+<div>{{ food.fdcId }}</div>
+<div>Ingredients: {{food.ingredients}}</div>
+<br />
+<div>Nutrition</div>
+{% for nutrient in food.foodNutrients %}
+    <div>{{ nutrient.nutrientName }} : {{nutrient.value}} ({{nutrient.unitName}})</div>
+    {% endfor %}
+    <hr />
+{% endfor %}
+
+{% endblock  %}
